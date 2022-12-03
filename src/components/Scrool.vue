@@ -10,7 +10,7 @@
           <span>{{i.title}}</span>
           <div class="bottom">
             <time class="time">{{ i.finddate.getFullYear()+'-'+i.finddate.getMonth()+'-'+i.finddate.getDate()}}</time>
-            <el-button text class="button" type="success" plain>详情</el-button>
+            <el-button @click="topage(i.id)" text class="button" type="success" plain>详情</el-button>
           </div>
         </div>
       </el-card>
@@ -21,6 +21,8 @@
 <script lang="ts" setup>
 import { ref } from 'vue'
 import axios from 'axios'
+import { useRouter } from 'vue-router'
+const router = useRouter()
 
 interface ILostObject{
   id : number,
@@ -70,9 +72,15 @@ const load = () => {
   lose.value.push(obj.value.records[1])
   
 })
+
 }
 
 
+
+function topage(i:number) {
+  router.push("/about?id="+i)
+
+}
 </script>
 
 <style>
