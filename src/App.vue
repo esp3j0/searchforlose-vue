@@ -14,8 +14,6 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/find">寻找</RouterLink>
         <RouterLink to="/about">详细信息</RouterLink>
         <RouterLink to="/">发布</RouterLink>
-        
-        
       </nav>
 
 
