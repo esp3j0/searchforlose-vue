@@ -1,3 +1,8 @@
+<script lang="ts">
+export default {
+    props: ['title']
+  }
+</script>
 <template>
     <el-card class="box-card">
       <template #header>

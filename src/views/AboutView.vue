@@ -1,7 +1,26 @@
+<script lang="ts">
+// Father.vue
+
+interface Member {
+  id: number
+  name: string
+}
+
+export default defineComponent({
+  // 需要启用子组件作为模板
+  components: {
+    Card,
+  },   
+  },
+)
+
+</script>
 <script lang="ts" setup>
 import {useRouter} from 'vue-router'
 import { ref } from 'vue'
 import axios from 'axios'
+import Card from '../components/Card.vue'
+import { defineComponent } from 'vue'
 const route = useRouter()
 let id = route.currentRoute.value.query.id
 console.log(id)
@@ -39,11 +58,16 @@ console.log(res)
 
 }
 load()
+
+
 </script>
 <template>
   <div class="about">
     {{id}}
     {{lose}}
+  </div>
+  <div>
+    <Card></Card>
   </div>
 </template>
 
