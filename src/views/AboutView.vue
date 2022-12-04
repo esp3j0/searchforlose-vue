@@ -62,12 +62,8 @@ load()
 
 </script>
 <template>
-  <div class="about">
-    {{id}}
-    {{lose}}
-  </div>
   <div>
-    <Card></Card>
+    <Card :alose="lose"></Card>
   </div>
 </template>
 
